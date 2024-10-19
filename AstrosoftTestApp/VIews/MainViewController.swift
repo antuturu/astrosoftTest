@@ -20,7 +20,6 @@ final class MainViewController: UIViewController, ConfigureUIProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.white
         setupBindings()
         configureView()
         configureConstraints()
@@ -33,6 +32,7 @@ final class MainViewController: UIViewController, ConfigureUIProtocol {
     }
 
     func configureView() {
+        view.backgroundColor = .systemBackground
         view.addSubview(mainTableView)
         mainTableView.dataSource = self
         mainTableView.delegate = self
@@ -80,7 +80,6 @@ extension MainViewController: UITableViewDelegate {
         let commitsViewModel = CommitsViewModel(gist: gist)
         let gistViewController = GistViewController(viewModel: commitsViewModel)
         let navigationController = UINavigationController(rootViewController: gistViewController)
-        navigationController.navigationBar.isHidden = true
         present(navigationController, animated: true)
     }
 }

@@ -91,6 +91,7 @@ final class GistViewController: UIViewController, ConfigureUIProtocol {
         super.viewDidLoad()
         configureView()
         configureConstraints()
+        setupNavigationBar()
         setupBindings()
     }
     
@@ -100,9 +101,9 @@ final class GistViewController: UIViewController, ConfigureUIProtocol {
     }
     
     func configureView() {
+        view.backgroundColor = .systemBackground
         view.addSubview(scroll)
         scroll.refreshControl = refreshControl
-        view.backgroundColor = UIColor.white
         [topView, commitsView, gistCollectionView].forEach {
             scroll.addSubview($0)
         }
@@ -164,6 +165,15 @@ final class GistViewController: UIViewController, ConfigureUIProtocol {
             gistCollectionView.heightAnchor.constraint(equalToConstant: CGFloat(viewModel?.numberOfItemsInGistSection() ?? 0) * 160),
             gistCollectionView.bottomAnchor.constraint(equalTo: scroll.bottomAnchor)
         ])
+    }
+    
+    private func setupNavigationBar() {
+        let backButton = UIBarButtonItem(title: "Назад", style: .plain, target: self, action: #selector(backButtonTapped))
+        navigationItem.leftBarButtonItem = backButton
+    }
+
+    @objc private func backButtonTapped() {
+        dismiss(animated: true, completion: nil)
     }
     
     private func setupBindings() {
