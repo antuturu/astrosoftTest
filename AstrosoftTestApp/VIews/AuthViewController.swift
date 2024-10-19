@@ -1,6 +1,6 @@
 import UIKit
 
-final class AuthViewController: UIViewController {
+final class AuthViewController: UIViewController, ConfigureUIProtocol {
     
     private let tokenService = TokenService()
     
@@ -26,7 +26,7 @@ final class AuthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
-        configureConstraits()
+        configureConstraints()
     }
     
     @objc
@@ -39,7 +39,7 @@ final class AuthViewController: UIViewController {
         }
     }
     
-    private func configureView() {
+    func configureView() {
         [
             tokenTextField,
             enterButton
@@ -51,7 +51,7 @@ final class AuthViewController: UIViewController {
         view.backgroundColor = UIColor.white
     }
     
-    private func configureConstraits() {
+    func configureConstraints() {
         NSLayoutConstraint.activate([
             tokenTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             tokenTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),

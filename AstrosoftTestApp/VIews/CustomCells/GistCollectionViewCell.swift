@@ -1,6 +1,6 @@
 import UIKit
 
-final class GistCollectionViewCell: UICollectionViewCell {
+final class GistCollectionViewCell: UICollectionViewCell, ConfigureUIProtocol {
     static let reuseIdentifier = "gistCells"
     
     private var url: String = ""
@@ -45,16 +45,16 @@ final class GistCollectionViewCell: UICollectionViewCell {
         self.url = url
     }
     
-    private func configureView() {
+    func configureView() {
         contentView.addSubview(tabView)
         [
-        fileButton
+            fileButton
         ].forEach {
             tabView.addSubview($0)
         }
     }
     
-    private func configureConstraints() {
+    func configureConstraints() {
         NSLayoutConstraint.activate([
             tabView.topAnchor.constraint(equalTo: contentView.topAnchor),
             tabView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),

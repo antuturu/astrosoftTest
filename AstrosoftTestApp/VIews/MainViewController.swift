@@ -1,6 +1,6 @@
 import UIKit
 
-final class MainViewController: UIViewController {
+final class MainViewController: UIViewController, ConfigureUIProtocol {
     private let viewModel = GistsViewModel()
     
     private let mainTableView: UITableView = {
@@ -32,14 +32,14 @@ final class MainViewController: UIViewController {
         }
     }
 
-    private func configureView() {
+    func configureView() {
         view.addSubview(mainTableView)
         mainTableView.dataSource = self
         mainTableView.delegate = self
         mainTableView.refreshControl = refreshControl
     }
     
-    private func configureConstraints() {
+    func configureConstraints() {
         NSLayoutConstraint.activate([
             mainTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             mainTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),

@@ -1,6 +1,6 @@
 import UIKit
 
-final class GistViewController: UIViewController {
+final class GistViewController: UIViewController, ConfigureUIProtocol {
     
     private var viewModel: CommitsViewModel?
     private var vizov: Int = 0
@@ -63,7 +63,7 @@ final class GistViewController: UIViewController {
     private let scroll: UIScrollView = {
         let scroll = UIScrollView()
         scroll.translatesAutoresizingMaskIntoConstraints = false
-    
+        
         return scroll
     }()
     
@@ -99,7 +99,7 @@ final class GistViewController: UIViewController {
         refreshControl.endRefreshing()
     }
     
-    private func configureView() {
+    func configureView() {
         view.addSubview(scroll)
         scroll.refreshControl = refreshControl
         view.backgroundColor = UIColor.white
@@ -120,7 +120,7 @@ final class GistViewController: UIViewController {
         }
     }
     
-    private func configureConstraints() {
+    func configureConstraints() {
         let width = view.frame.width - 16
         NSLayoutConstraint.activate([
             scroll.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -137,7 +137,7 @@ final class GistViewController: UIViewController {
             commitsView.trailingAnchor.constraint(equalTo: scroll.trailingAnchor, constant: -8),
             commitsView.topAnchor.constraint(equalTo: topView.bottomAnchor, constant: 16),
             commitsView.widthAnchor.constraint(equalToConstant: width),
-
+            
             commitsTextView.leadingAnchor.constraint(equalTo: commitsView.leadingAnchor, constant: 8),
             commitsTextView.trailingAnchor.constraint(equalTo: commitsView.trailingAnchor, constant: -8),
             commitsTextView.topAnchor.constraint(equalTo: commitsView.topAnchor, constant: 8),

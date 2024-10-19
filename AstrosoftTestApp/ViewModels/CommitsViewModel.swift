@@ -1,6 +1,6 @@
 import Foundation
 
-final class CommitsViewModel {
+final class CommitsViewModel: CommitsViewModelProtocol {
     private var currentIndex: Int = 0
     private var keys: [String] = []
     private let gistsService = GistsService.shared
@@ -72,7 +72,6 @@ final class CommitsViewModel {
         commits.forEach {
             text += "\($0.version) \($0.committedAt)\n"
         }
-        print(text)
         return text
     }
 }

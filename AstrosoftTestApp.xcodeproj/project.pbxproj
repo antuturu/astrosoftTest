@@ -31,6 +31,8 @@
 		20FFB6EA2CC13EDC001806C4 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FFB6E92CC13EDC001806C4 /* WebViewController.swift */; };
 		20FFB6EC2CC16240001806C4 /* CommitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FFB6EB2CC16240001806C4 /* CommitsModel.swift */; };
 		20FFB6EE2CC17460001806C4 /* CommitsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FFB6ED2CC17460001806C4 /* CommitsViewModel.swift */; };
+		20FFB6F12CC40779001806C4 /* CommitsViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FFB6F02CC40779001806C4 /* CommitsViewModelProtocol.swift */; };
+		20FFB6F32CC407A5001806C4 /* ConfigureUIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FFB6F22CC407A5001806C4 /* ConfigureUIProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,8 @@
 		20FFB6E92CC13EDC001806C4 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		20FFB6EB2CC16240001806C4 /* CommitsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitsModel.swift; sourceTree = "<group>"; };
 		20FFB6ED2CC17460001806C4 /* CommitsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitsViewModel.swift; sourceTree = "<group>"; };
+		20FFB6F02CC40779001806C4 /* CommitsViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitsViewModelProtocol.swift; sourceTree = "<group>"; };
+		20FFB6F22CC407A5001806C4 /* ConfigureUIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureUIProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,7 @@
 		20FFB6AE2CBAA5ED001806C4 /* AstrosoftTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				20FFB6EF2CC40762001806C4 /* Protocols */,
 				20FFB6D32CBC273C001806C4 /* Extensions */,
 				20FFB6CD2CBC12F7001806C4 /* Services */,
 				20FFB6C82CBAA832001806C4 /* ViewModels */,
@@ -165,6 +170,15 @@
 				20FFB6E52CBFC4D8001806C4 /* GistCollectionViewCell.swift */,
 			);
 			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		20FFB6EF2CC40762001806C4 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				20FFB6F02CC40779001806C4 /* CommitsViewModelProtocol.swift */,
+				20FFB6F22CC407A5001806C4 /* ConfigureUIProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,8 +261,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				20FFB6B42CBAA5ED001806C4 /* MainViewController.swift in Sources */,
+				20FFB6F32CC407A5001806C4 /* ConfigureUIProtocol.swift in Sources */,
 				20FFB6B02CBAA5ED001806C4 /* AppDelegate.swift in Sources */,
 				20FFB6D82CBD5AF9001806C4 /* MainTableViewCell.swift in Sources */,
+				20FFB6F12CC40779001806C4 /* CommitsViewModelProtocol.swift in Sources */,
 				20FFB6E02CBEA29E001806C4 /* OwnerModel.swift in Sources */,
 				20FFB6D52CBC276A001806C4 /* UITextField+Extension.swift in Sources */,
 				20FFB6DE2CBE9F9D001806C4 /* GistModel.swift in Sources */,
